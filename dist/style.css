@@ -73,3 +73,23 @@ body {
 .nav__button:hover {
   background-color: var(--color-hover);
 }
+
+/* Main-content */
+
+.main__content {
+  margin: 0 50rem;
+}
+
+/* Hero */
+.home__image--img {
+  width: 100%;
+}
+
+.main__content--home {
+  display: flex;
+  /* min-height: 60vh;
+  background-image: url("../src/image/hero3-removebg.png");
+  background-position: 75% 25%;
+  background-size: contain;
+  background-repeat: no-repeat; */
+}
