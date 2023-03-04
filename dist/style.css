@@ -125,6 +125,10 @@ button:active {
   flex: 1;
 }
 
+.home__text h1 {
+  font-size: 6.4rem;
+}
+
 .home__image {
   flex: 1;
 }
@@ -147,11 +151,46 @@ button:active {
   background-color: var(--color-active);
 }
 
+/* MENU */
+
+.menu__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.menu__signature {
+  grid-column: 1 / span 2;
+}
+
+.menu__normal {
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1162px) {
+  .container {
+    padding: var(--gap-small) 6em;
+  }
+
+  .home__text h1 {
+    font-size: 4.8rem;
+  }
+}
+
 /* media query to change flex-direction in small screen for .main__content--home */
 @media screen and (max-width: 768px) {
   .main__content--home {
     flex-direction: column;
     gap: 0;
+  }
+
+  .home__text h1 {
+    text-align: center;
   }
 
   .home__text button {
