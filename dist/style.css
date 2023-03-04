@@ -3,6 +3,9 @@
   --gap-small: 2rem;
   --gap-medium: 4rem;
   --gap-big: 6rem;
+  --padding-small: 1rem;
+  --padding-medium: 2rem;
+  --padding-big: 3rem;
 
   --color-font: #2a130c;
   --color-hover: #eebfb1;
@@ -156,7 +159,7 @@ button:active {
 .menu__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: min-content;
   gap: 2rem;
 }
 
@@ -164,10 +167,46 @@ button:active {
   grid-column: 1 / span 2;
 }
 
+.menu__signature--text {
+  padding: var(--padding-medium);
+}
+
+.menu__signature--title,
+.menu__normal--title {
+  font-size: 2.4rem;
+  margin-bottom: var(--gap-small);
+}
+
+.menu__signature--text p {
+  margin-bottom: var(--gap-small);
+}
+
 .menu__normal {
   border: 1px solid var(--color-border);
+  padding: var(--padding-small);
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  font-size: 1.6rem;
+}
+
+/* TODO: make the images uniform and responsive */
+.menu__normal--img,
+.menu__signature--img {
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.menu__normal--text {
+  padding: 2rem;
+}
+
+/* TODO: make grid cells shorter in height*/
+
+.menu__normal--text p {
+  margin-bottom: 1rem;
 }
 
 /* MEDIA QUERIES */
@@ -180,10 +219,16 @@ button:active {
   .home__text h1 {
     font-size: 4.8rem;
   }
+
+  .menu__normal--img,
+  .menu__signature--img {
+    width: 15rem;
+    height: 15rem;
+  }
 }
 
 /* media query to change flex-direction in small screen for .main__content--home */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 863px) {
   .main__content--home {
     flex-direction: column;
     gap: 0;
@@ -199,5 +244,42 @@ button:active {
   /* change position of .main__content--home */
   .home__text {
     order: 2;
+  }
+
+  .menu__normal--img,
+  .menu__signature--img {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+@media screen and (max-width: 722px) {
+  .container {
+    padding: var(--gap-small) 2em;
+  }
+
+  .menu__normal {
+    flex-direction: column;
+  }
+
+  /* menu__normal--image should come first in the flex container */
+  .menu__normal--text,
+  .menu__signature--text {
+    order: 2;
+  }
+
+  .menu__normal--img,
+  .menu__signature--img {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .main__content {
+    padding: var(--gap-small);
+  }
+
+  .menu__container {
+    display: flex;
+    flex-direction: column;
   }
 }
