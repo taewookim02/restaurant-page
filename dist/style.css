@@ -12,6 +12,7 @@
   --color-active: #eab09e;
   --color-white: #fff;
   --color-border: #d4603d;
+  --color-border--light: #e5a08b;
 }
 
 /* 
@@ -142,7 +143,7 @@ button:active {
   align-self: flex-start;
   border: none;
   color: var(--color-white);
-  background-color: var(--color-border);
+  background-color: var(--color-light);
 }
 
 .home__text button:hover {
@@ -182,11 +183,12 @@ button:active {
 }
 
 .menu__normal {
-  border: 1px solid var(--color-border);
+  border: 3px solid var(--color-border--light);
+  border-radius: 1rem;
   padding: var(--padding-small);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   font-size: 1.6rem;
 }
 
@@ -209,6 +211,28 @@ button:active {
   margin-bottom: 1rem;
 }
 
+/* ABOUT */
+.main__content--about {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about__text {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  max-width: 50%;
+}
+
+.about__text h1 {
+  font-size: 3.2rem;
+  margin-bottom: var(--gap-small);
+}
+
+.about__image {
+  flex: 1;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 1162px) {
@@ -224,6 +248,11 @@ button:active {
   .menu__signature--img {
     width: 15rem;
     height: 15rem;
+  }
+
+  .main__content--about {
+    flex-direction: column;
+    gap: 2rem;
   }
 }
 
@@ -281,5 +310,11 @@ button:active {
   .menu__container {
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 436px) {
+  .nav {
+    gap: 1.2rem;
   }
 }
