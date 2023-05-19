@@ -143,7 +143,7 @@ button:active {
   align-self: flex-start;
   border: none;
   color: var(--color-white);
-  background-color: var(--color-light);
+  background-color: var(--color-border);
 }
 
 .home__text button:hover {
@@ -279,6 +279,10 @@ button:active {
   .menu__signature--img {
     width: 10rem;
     height: 10rem;
+  }
+
+  .map {
+    width: 100%;
   }
 }
 
