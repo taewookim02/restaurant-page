@@ -1,3 +1,5 @@
 import myFunction from "./displayController";
 
-(function () {})();
+(function () {
+  myFunction();
+})();
